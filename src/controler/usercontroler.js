@@ -32,7 +32,7 @@ router.post("",upload.single('profile'),async (req, res) => {
 });
 
 
-router.post("/multiple",upload.any('profile'),async (req, res) => {
+router.post("/multiple",upload.any('profile',5),async (req, res) => {
     try {
           const filepath= req.file.map((file)=>{
               return file.path;
